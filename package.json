@@ -1,0 +1,17 @@
+{
+  "name": "gatsby-plugin-snap-engage",
+  "version": "1.0.0",
+  "description": "A simple Gatsby plugin, adding the SnapEngage Chat to gatsby",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"No build script setup\""
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "snap engage"
+  ],
+  "author": "Niklas Dahlqvist <dalkmania@gmail.com>",
+  "license": "0BSD"
+}
