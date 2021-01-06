@@ -4,6 +4,6 @@
         "@babel/preset-env"
     ],
     "ignore": [
-        "**/__tests__", // ignore the whole test directory
+        "**/__tests__" // ignore the whole test directory
     ]
 }
