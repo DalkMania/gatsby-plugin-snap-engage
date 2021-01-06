@@ -35,8 +35,9 @@ const getLanguage = (pathname, pluginOptions) => {
   if(pluginOptions.multilingual === true) {
     const currentLocale = pathname.match(/^\/([^?\/]+)/)
     const locales = Object.keys(pluginOptions.locales)
+    const match = locales.filter(locale => locale === currentLocale[1]).length > 0
 
-    if((currentLocale !== null) && locales.filter(locale => locale == currentLocale)) {
+    if((currentLocale !== null) && match) {
       return pluginOptions.locales[currentLocale[1]]
     } else {
       return pluginOptions.locales[pluginOptions.defaultLocale]
