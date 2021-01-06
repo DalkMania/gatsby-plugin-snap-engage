@@ -1,4 +1,5 @@
 import React from "react"
+import { stripIndent } from "common-tags"
 
 const getLanguage = (pathname, pluginOptions) => {
   const currentLocale = pathname.match(/^\/([^?\/]+)/)
@@ -11,18 +12,18 @@ const getLanguage = (pathname, pluginOptions) => {
   }
 }
 
-export const onRenderBody = ({ pathname, setHeadComponents }, pluginOptions) => {
+export const onRenderBody = ({ pathname, setPostBodyComponents }, pluginOptions) => {
   if (
     process.env.NODE_ENV === `production` ||
     pluginOptions.includeInDevelopment
   ) {
     const id = getLanguage(pathname, pluginOptions)
 
-    return setHeadComponents([
+    return setPostBodyComponents([
       <script
         key={`gatsby-plugin-snap-engage`}
         dangerouslySetInnerHTML={{
-          __html: `
+          __html: stripIndent(`
           (function() {
             var se = document.createElement('script'); se.type = 'text/javascript'; se.async = true;
             se.src = '//storage.googleapis.com/code.snapengage.com/js/${id}.js';
@@ -34,7 +35,7 @@ export const onRenderBody = ({ pathname, setHeadComponents }, pluginOptions) => 
             };
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(se, s);
           })();
-          `,
+          `),
         }}
       />,
     ])
