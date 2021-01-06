@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gatsby-plugin-snap-engage onRenderBody in development mode it does add the script to the body, if the includeInDevelopment option is true 1`] = `
+Array [
+  Array [
+    Array [
+      <script
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "
+          (function() {
+            var se = document.createElement('script'); se.type = 'text/javascript'; se.async = true;
+            se.src = '//storage.googleapis.com/code.snapengage.com/js/1.js';
+            var done = false;
+            se.onload = se.onreadystatechange = function() {
+              if (!done&&(!this.readyState||this.readyState==='loaded'||this.readyState==='complete')) {
+                done = true;
+              }
+            };
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(se, s);
+          })();
+          ",
+          }
+        }
+      />,
+    ],
+  ],
+]
+`;
+
+exports[`gatsby-plugin-snap-engage onRenderBody in production mode it does add the script to the body 1`] = `
+Array [
+  Array [
+    Array [
+      <script
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "
+          (function() {
+            var se = document.createElement('script'); se.type = 'text/javascript'; se.async = true;
+            se.src = '//storage.googleapis.com/code.snapengage.com/js/1.js';
+            var done = false;
+            se.onload = se.onreadystatechange = function() {
+              if (!done&&(!this.readyState||this.readyState==='loaded'||this.readyState==='complete')) {
+                done = true;
+              }
+            };
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(se, s);
+          })();
+          ",
+          }
+        }
+      />,
+    ],
+  ],
+]
+`;

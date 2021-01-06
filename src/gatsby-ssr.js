@@ -1,17 +1,6 @@
 import React from "react"
 import { stripIndent } from "common-tags"
 
-const getLanguage = (pathname, pluginOptions) => {
-  const currentLocale = pathname.match(/^\/([^?\/]+)/)
-  const locales = Object.keys(pluginOptions.locales)
-
-  if((currentLocale !== null) && locales.filter(locale => locale == currentLocale)) {
-    return pluginOptions.locales[currentLocale[1]]
-  } else {
-    return pluginOptions.locales[pluginOptions.defaultLocale]
-  }
-}
-
 export const onRenderBody = ({ pathname, setPostBodyComponents }, pluginOptions) => {
   if (
     process.env.NODE_ENV === `production` ||
@@ -39,5 +28,20 @@ export const onRenderBody = ({ pathname, setPostBodyComponents }, pluginOptions)
         }}
       />,
     ])
+  }
+}
+
+const getLanguage = (pathname, pluginOptions) => {
+  if(pluginOptions.multilingual === true) {
+    const currentLocale = pathname.match(/^\/([^?\/]+)/)
+    const locales = Object.keys(pluginOptions.locales)
+
+    if((currentLocale !== null) && locales.filter(locale => locale == currentLocale)) {
+      return pluginOptions.locales[currentLocale[1]]
+    } else {
+      return pluginOptions.locales[pluginOptions.defaultLocale]
+    }
+  } else {
+    return pluginOptions.id
   }
 }
