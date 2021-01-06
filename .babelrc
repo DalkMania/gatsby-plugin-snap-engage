@@ -2,5 +2,8 @@
     "presets": [
         "@babel/preset-react",
         "@babel/preset-env"
+    ],
+    "ignore": [
+        "**/__tests__", // ignore the whole test directory
     ]
 }
