@@ -26,6 +26,7 @@ plugins: [
   {
       resolve: `gatsby-plugin-snap-engage`,
       options: {
+        multilingual: false,
         id: 'YOUR_SNAP_ENGAGE_SCRIPT_ID',
         includeInDevelopment: false,
       },
@@ -37,6 +38,7 @@ plugins: [
   {
       resolve: `gatsby-plugin-snap-engage`,
       options: {
+        multilingual: true,
         defaultLocale: 'en',
         locales: {
           'en': 'YOUR_SNAP_ENGAGE_SCRIPT_ID_FOR_LOCALE',
