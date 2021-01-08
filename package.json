@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-snap-engage",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple Gatsby plugin, adding the SnapEngage Chat to gatsby",
   "main": "index.js",
   "scripts": {
