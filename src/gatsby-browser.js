@@ -6,7 +6,7 @@ export const onPreRouteUpdate = ({ prevLocation, location }, pluginOptions) => {
       const prevId = getLanguage(prevLocation.pathname, pluginOptions)
       const currId = getLanguage(location.pathname, pluginOptions)
 
-      if( prevId !== currId && prevLocation.pathname !== location.pathname) {
+      if( prevId !== currId) {
           window.location.reload()
       }
     }
