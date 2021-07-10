@@ -82,7 +82,7 @@ describe(`gatsby-plugin-snap-engage`, () => {
         });
 
         describe(`in production mode`, () => {
-            const { reload } = window.location;
+            const { assign } = window.location;
             let env;
 
             beforeAll(() => {
